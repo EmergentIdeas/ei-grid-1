@@ -1,0 +1,24 @@
+{
+  "name": "ei-grid-1",
+  "version": "1.0.0",
+  "description": "a very simple grid system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmergentIdeas/ei-grid-1.git"
+  },
+  "keywords": [
+    "css",
+    "less",
+    "grid"
+  ],
+  "author": "Dan Kolz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmergentIdeas/ei-grid-1/issues"
+  },
+  "homepage": "https://github.com/EmergentIdeas/ei-grid-1#readme"
+}

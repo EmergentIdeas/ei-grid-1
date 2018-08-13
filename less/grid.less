@@ -1,0 +1,71 @@
+
+.define-grid-breakpoints-if-not-defined {
+	@container-width:			1100px;
+	@tablet-width: 				900px;
+	@tablet-small-width:        716px;
+	@big-phone-width:			650px;
+	@phone-width:               550px;
+	@iphone-4-landscape-width:	480px;
+	@iphone-4-width: 			320px;
+}
+
+.grid {
+	.define-grid-breakpoints-if-not-defined();
+	
+	.tablet(@rules) {
+		@media(min-width: @tablet-width) {
+			@rules();
+		}
+	}
+	.clear-inner {
+		&:after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+	}
+	
+	.row {
+		.tablet({
+			.clear-inner;
+			margin-left: -1%;
+			margin-right: -1%;
+			
+			.t {
+				margin-left: 1%;
+				margin-right: 1%;
+				float: left;
+				box-sizing: border-box;
+			}
+			
+			.t2 {
+				.t;
+				width: 14.66666%;
+			}
+			
+			.t24 {
+				.t;
+				width: 18%;
+			}
+			
+			
+			.t4 {
+				.t;
+				width: 31.3333%;
+			}
+			
+			
+			.t6 {
+				.t;
+				width: 48%;
+			}
+			.t12 {
+				.t;
+				width: 98%;
+			}
+		});
+		
+	}
+	
+	
+}
