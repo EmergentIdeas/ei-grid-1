@@ -1,4 +1,3 @@
-
 .define-grid-breakpoints-if-not-defined {
 	@container-width:			1100px;
 	@tablet-width: 				900px;
@@ -9,7 +8,36 @@
 	@iphone-4-width: 			320px;
 }
 
+.grid-clear-inner {
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+
+.grid-func-tdef(@spanwidth, @gutterwidth: 15px) {
+	margin-left: 1%;
+	margin-right: 1%;
+	float: left;
+	box-sizing: border-box;
+	width: percentage(( (100 * ( @spanwidth / 12)) - 2) / 100);
+	margin-left: ~"calc(@{gutterwidth})";
+	margin-right: ~"calc(@{gutterwidth})";
+	@width-percentage: percentage(( (100 * ( @spanwidth / 12))) / 100);
+	@double-gutter: @gutterwidth * 2;
+	width: ~"calc( @{width-percentage} - @{double-gutter})";
+}
+
 .grid {
+	.gutter-grid(15px);
+}
+.gutterless-grid {
+	.gutter-grid(0px);
+}
+
+.gutter-grid(@gutterwidth) {
+	overflow: hidden;
 	.define-grid-breakpoints-if-not-defined();
 	
 	.tablet(@rules) {
@@ -17,53 +45,80 @@
 			@rules();
 		}
 	}
-	.clear-inner {
-		&:after {
-			content: '';
-			display: table;
-			clear: both;
-		}
-	}
 	
 	.row {
+		.grid-clear-inner;
+		
+		margin-left: -1%;
+		margin-right: -1%;
+		margin-left: ~"calc(-@{gutterwidth})";
+		margin-right: ~"calc(-@{gutterwidth})";
+		
+		.xs1 {
+			.grid-func-tdef(1, @gutterwidth);
+		}
+		.xs2 {
+			.grid-func-tdef(2, @gutterwidth);
+		}
+		.xs3 {
+			.grid-func-tdef(3, @gutterwidth);
+		}
+		.xs4 {
+			.grid-func-tdef(4, @gutterwidth);
+		}
+		.xs5 {
+			.grid-func-tdef(5, @gutterwidth);
+		}
+		.xs7 {
+			.grid-func-tdef(7, @gutterwidth);
+		}
+		.xs6 {
+			.grid-func-tdef(6, @gutterwidth);
+		}
+		.xs10 {
+			.grid-func-tdef(10, @gutterwidth);
+		}
+		.xs12 {
+			.grid-func-tdef(12, @gutterwidth);
+		}
+		
+		
 		.tablet({
-			.clear-inner;
-			margin-left: -1%;
-			margin-right: -1%;
 			
-			.t {
-				margin-left: 1%;
-				margin-right: 1%;
-				float: left;
-				box-sizing: border-box;
+			.t1 {
+				.grid-func-tdef(1, @gutterwidth);
 			}
 			
 			.t2 {
-				.t;
-				width: 14.66666%;
+				.grid-func-tdef(2, @gutterwidth);
 			}
 			
-			.t24 {
-				.t;
-				width: 18%;
+			.t3 {
+				.grid-func-tdef(3, @gutterwidth);
 			}
-			
-			
 			.t4 {
-				.t;
-				width: 31.3333%;
+				.grid-func-tdef(4, @gutterwidth);
 			}
 			
+			.t5 {
+				.grid-func-tdef(5, @gutterwidth);
+			}
+			.t7 {
+				.grid-func-tdef(7, @gutterwidth);
+			}
 			
 			.t6 {
-				.t;
-				width: 48%;
+				.grid-func-tdef(6, @gutterwidth);
+			}
+			.t10 {
+				.grid-func-tdef(10, @gutterwidth);
 			}
 			.t12 {
-				.t;
-				width: 98%;
+				.grid-func-tdef(12, @gutterwidth);
 			}
 		});
+		
+		
 		
 	}
 	
