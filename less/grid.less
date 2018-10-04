@@ -1,126 +1,117 @@
-.define-grid-breakpoints-if-not-defined {
-	@container-width:			1100px;
-	@tablet-width: 				900px;
-	@tablet-small-width:        716px;
-	@big-phone-width:			650px;
-	@phone-width:               550px;
-	@iphone-4-landscape-width:	480px;
-	@iphone-4-width: 			320px;
-}
-
-.grid-clear-inner {
-	&:after {
-		content: '';
-		display: table;
-		clear: both;
+#ei-grid-1 {
+	.define-grid-breakpoints-if-not-defined {
+		@container-width:			1100px;
+		@tablet-width: 				900px;
+		@tablet-small-width:        716px;
+		@big-phone-width:			650px;
+		@phone-width:               550px;
+		@iphone-4-landscape-width:	480px;
+		@iphone-4-width: 			320px;
 	}
-}
-
-.grid-func-tdef(@spanwidth, @gutterwidth: 15px) {
-	margin-left: 1%;
-	margin-right: 1%;
-	float: left;
-	box-sizing: border-box;
-	width: percentage(( (100 * ( @spanwidth / 12)) - 2) / 100);
-	margin-left: ~"calc(@{gutterwidth})";
-	margin-right: ~"calc(@{gutterwidth})";
-	@width-percentage: percentage(( (100 * ( @spanwidth / 12))) / 100);
-	@double-gutter: @gutterwidth * 2;
-	width: ~"calc( @{width-percentage} - @{double-gutter})";
-}
-
-.grid {
-	.gutter-grid(15px);
-}
-.gutterless-grid {
-	.gutter-grid(0px);
-}
-
-.gutter-grid(@gutterwidth) {
-	overflow: hidden;
 	.define-grid-breakpoints-if-not-defined();
-	
-	.tablet(@rules) {
-		@media(min-width: @tablet-width) {
-			@rules();
+
+	.grid-clear-inner {
+		&:after {
+			content: '';
+			display: table;
+			clear: both;
 		}
 	}
-	
-	.row {
-		.grid-clear-inner;
+
+	.grid-func-tdef(@spanwidth, @gutterwidth: 15px) {
+		margin-left: 1%;
+		margin-right: 1%;
+		float: left;
+		box-sizing: border-box;
+		width: percentage(( (100 * ( @spanwidth / 12)) - 2) / 100);
+		margin-left: ~"calc(@{gutterwidth})";
+		margin-right: ~"calc(@{gutterwidth})";
+		@width-percentage: percentage(( (100 * ( @spanwidth / 12))) / 100);
+		@double-gutter: @gutterwidth * 2;
+		width: ~"calc( @{width-percentage} - @{double-gutter})";
+	}
+
+	.grid {
+		.gutter-grid(15px);
+	}
+	.gutterless-grid {
+		.gutter-grid(0px);
+	}
+
+	.gutter-grid(@gutterwidth) {
+		overflow: hidden;
 		
-		margin-left: -1%;
-		margin-right: -1%;
-		margin-left: ~"calc(-@{gutterwidth})";
-		margin-right: ~"calc(-@{gutterwidth})";
-		
-		.xs1 {
-			.grid-func-tdef(1, @gutterwidth);
-		}
-		.xs2 {
-			.grid-func-tdef(2, @gutterwidth);
-		}
-		.xs3 {
-			.grid-func-tdef(3, @gutterwidth);
-		}
-		.xs4 {
-			.grid-func-tdef(4, @gutterwidth);
-		}
-		.xs5 {
-			.grid-func-tdef(5, @gutterwidth);
-		}
-		.xs7 {
-			.grid-func-tdef(7, @gutterwidth);
-		}
-		.xs6 {
-			.grid-func-tdef(6, @gutterwidth);
-		}
-		.xs10 {
-			.grid-func-tdef(10, @gutterwidth);
-		}
-		.xs12 {
-			.grid-func-tdef(12, @gutterwidth);
+		.tablet(@rules) {
+			@media(min-width: @tablet-width) {
+				@rules();
+			}
 		}
 		
-		
-		.tablet({
+		.row {
+			.grid-clear-inner;
 			
-			.t1 {
+			margin-left: -1%;
+			margin-right: -1%;
+			margin-left: ~"calc(-@{gutterwidth})";
+			margin-right: ~"calc(-@{gutterwidth})";
+			
+			.xs1 {
 				.grid-func-tdef(1, @gutterwidth);
 			}
-			
-			.t2 {
+			.xs2 {
 				.grid-func-tdef(2, @gutterwidth);
 			}
-			
-			.t3 {
+			.xs3 {
 				.grid-func-tdef(3, @gutterwidth);
 			}
-			.t4 {
+			.xs4 {
 				.grid-func-tdef(4, @gutterwidth);
 			}
-			
-			.t5 {
+			.xs5 {
 				.grid-func-tdef(5, @gutterwidth);
 			}
-			.t7 {
+			.xs7 {
 				.grid-func-tdef(7, @gutterwidth);
 			}
-			
-			.t6 {
+			.xs6 {
 				.grid-func-tdef(6, @gutterwidth);
 			}
-			.t10 {
+			.xs10 {
 				.grid-func-tdef(10, @gutterwidth);
 			}
-			.t12 {
+			.xs12 {
 				.grid-func-tdef(12, @gutterwidth);
 			}
-		});
-		
-		
-		
+			
+			.tablet({
+				.t1 {
+					.grid-func-tdef(1, @gutterwidth);
+				}
+				.t2 {
+					.grid-func-tdef(2, @gutterwidth);
+				}
+				.t3 {
+					.grid-func-tdef(3, @gutterwidth);
+				}
+				.t4 {
+					.grid-func-tdef(4, @gutterwidth);
+				}
+				.t5 {
+					.grid-func-tdef(5, @gutterwidth);
+				}
+				.t7 {
+					.grid-func-tdef(7, @gutterwidth);
+				}
+				.t6 {
+					.grid-func-tdef(6, @gutterwidth);
+				}
+				.t10 {
+					.grid-func-tdef(10, @gutterwidth);
+				}
+				.t12 {
+					.grid-func-tdef(12, @gutterwidth);
+				}
+			});
+		}
 	}
-	
-	
 }
