@@ -47,6 +47,12 @@
 			}
 		}
 		
+		.container(@rules) {
+			@media(min-width: @container-width) {
+				@rules();
+			}
+		}
+		
 		.row {
 			.grid-clear-inner;
 			
@@ -85,6 +91,9 @@
 			.xs10 {
 				.grid-func-tdef(10, @gutterwidth);
 			}
+			.xs11 {
+				.grid-func-tdef(11, @gutterwidth);
+			}
 			.xs12 {
 				.grid-func-tdef(12, @gutterwidth);
 			}
@@ -92,6 +101,9 @@
 			.tablet({
 				.t1 {
 					.grid-func-tdef(1, @gutterwidth);
+				}
+				.t1p5 {
+					.grid-func-tdef(1.5, @gutterwidth);
 				}
 				.t2 {
 					.grid-func-tdef(2, @gutterwidth);
@@ -119,6 +131,50 @@
 				}
 				.t10 {
 					.grid-func-tdef(10, @gutterwidth);
+				}
+				.t10p5 {
+					.grid-func-tdef(10.5, @gutterwidth);
+				}
+				.t11 {
+					.grid-func-tdef(11, @gutterwidth);
+				}
+				.t12 {
+					.grid-func-tdef(12, @gutterwidth);
+				}
+			});
+			.container({
+				.c1 {
+					.grid-func-tdef(1, @gutterwidth);
+				}
+				.c2 {
+					.grid-func-tdef(2, @gutterwidth);
+				}
+				.c3 {
+					.grid-func-tdef(3, @gutterwidth);
+				}
+				.c4 {
+					.grid-func-tdef(4, @gutterwidth);
+				}
+				.c5 {
+					.grid-func-tdef(5, @gutterwidth);
+				}
+				.c6 {
+					.grid-func-tdef(6, @gutterwidth);
+				}
+				.c7 {
+					.grid-func-tdef(7, @gutterwidth);
+				}
+				.c8 {
+					.grid-func-tdef(8, @gutterwidth);
+				}
+				.c9 {
+					.grid-func-tdef(9, @gutterwidth);
+				}
+				.c10 {
+					.grid-func-tdef(10, @gutterwidth);
+				}
+				.c11 {
+					.grid-func-tdef(11, @gutterwidth);
 				}
 				.t12 {
 					.grid-func-tdef(12, @gutterwidth);
